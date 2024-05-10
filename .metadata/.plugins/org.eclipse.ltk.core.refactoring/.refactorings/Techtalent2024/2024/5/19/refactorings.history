@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;Techtalent2024&apos;&#x0D;&#x0A;- Original project: &apos;Techtalent2024&apos;&#x0D;&#x0A;- Original element: &apos;UD19_swing.app_cine.java&apos;" description="Delete element" element1="/src&lt;UD19_swing{app_cine.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1715340631963" subPackages="false" version="1.0"/>
+</session>
