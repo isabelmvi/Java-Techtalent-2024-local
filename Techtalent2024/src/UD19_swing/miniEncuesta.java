@@ -6,7 +6,6 @@ import java.awt.GridBagLayout;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 public class miniEncuesta extends JFrame {
 
     private JRadioButton radioButtonWindows, radioButtonLinux, radioButtonMac;

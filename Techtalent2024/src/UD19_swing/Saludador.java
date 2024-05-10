@@ -10,7 +10,7 @@ public class Saludador extends JFrame implements ActionListener {
     private JTextField textField;
     private JButton button;
     private boolean textoBorrado = false;
-
+    
     public Saludador() {
         setTitle("Saludador personalizable");
         setSize(300, 150);

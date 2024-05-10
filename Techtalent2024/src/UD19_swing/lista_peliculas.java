@@ -16,7 +16,7 @@ public class lista_peliculas extends JFrame {
     private JComboBox<String> comboBoxPeliculas;
     private JTextField textFieldNuevaPelicula;
     private JButton buttonAgregar;
-
+    
     public lista_peliculas() {
         setTitle("Lista de Películas");
         setSize(400, 200);
