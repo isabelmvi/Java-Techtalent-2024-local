@@ -1514,3 +1514,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration ej9_UD20 references
 2024-05-30 10:00:17,246 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\iovil\Desktop\Java-Techtalent-2024\C4\src\main\resources
 2024-05-30 10:00:17,249 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-05-30 10:00:17,249 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\iovil\Desktop\Java-Techtalent-2024\C4\src\test\resources
+2024-05-30 12:31:17,986 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
