@@ -27,7 +27,7 @@ public class investigadores_facultad {
             System.out.println("Tabla facultad creada");
 
             // Insertar datos en la tabla facultad
-            statement.executeUpdate("INSERT INTO facultad (Codigo, Nombre) VALUES " +
+            statement.executeUpdate("INSERT IGNORE INTO facultad (Codigo, Nombre) VALUES " +
                     "(1, 'Facultad de Ciencias'), " +
                     "(2, 'Facultad de Ingeniería'), " +
                     "(3, 'Facultad de Medicina'), " +
@@ -50,7 +50,7 @@ public class investigadores_facultad {
             System.out.println("Tabla equipos creada");
 
             // Insertar datos en la tabla equipos
-            statement.executeUpdate("INSERT INTO equipos (NumSerie, Nombre, Facultad) VALUES " +
+            statement.executeUpdate("INSERT IGNORE INTO equipos (NumSerie, Nombre, Facultad) VALUES " +
                     "('1234', 'Equipo A', 1), " +
                     "('5678', 'Equipo B', 2), " +
                     "('9101', 'Equipo C', 3), " +
@@ -72,7 +72,7 @@ public class investigadores_facultad {
             System.out.println("Tabla investigadores creada");
 
             // Insertar datos en la tabla investigadores
-            statement.executeUpdate("INSERT INTO investigadores (DNI, NomApels, Facultad) VALUES " +
+            statement.executeUpdate("INSERT IGNORE INTO investigadores (DNI, NomApels, Facultad) VALUES " +
                     "('123456789', 'Juan Pérez', 1), " +
                     "('987654321', 'María Gómez', 2), " +
                     "('567890123', 'Pedro Martínez', 3), " +
@@ -95,7 +95,7 @@ public class investigadores_facultad {
             System.out.println("Tabla reserva creada");
 
             // Insertar datos en la tabla reserva
-            statement.executeUpdate("INSERT INTO reserva (DNI, NumSerie, Comienzo, Fin) VALUES " +
+            statement.executeUpdate("INSERT IGNORE INTO reserva (DNI, NumSerie, Comienzo, Fin) VALUES " +
                     "('123456789', '1234', '2024-05-04', '2025-05-03'), " +
                     "('987654321', '5678', '2024-05-05', '2025-05-04'), " +
                     "('567890123', '9101', '2024-05-06', '2025-05-05'), " +
