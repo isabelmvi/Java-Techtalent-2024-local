@@ -13,4 +13,6 @@
     <fullyQualifiedTypeName name="UD10_exceptions.dentro_package"/>
     <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="calculadora.calc"/>
+    <fullyQualifiedTypeName name="Geometria.areaTriangulo"/>
+    <fullyQualifiedTypeName name="Geometria.areaCirculo"/>
 </qualifiedTypeNameHistroy>
