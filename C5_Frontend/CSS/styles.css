@@ -1,0 +1,47 @@
+/* Estilos generales */
+body {
+    background-color: #fbf5eb;
+}
+
+/* Estilos para el título principal */
+h1 {
+    background-color: #f4d289;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #585858;
+    font-size: x-large;
+}
+
+/* Estilos para el subtítulo */
+h2 {
+    color: #6f9dbe;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+/* Estilos para párrafos con clases específicas */
+p1, p2, p3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Clases de resalte */
+.highlight {
+    font-style: italic;
+    color: #677f8f;
+}
+
+.highlight2 {
+    color: #585858;
+}
+
+/* Estilos para los encabezados menores */
+h3, h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #677f8f;
+}
+
+/* Estilos para listas */
+ul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #585858;
+}
