@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque natural</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="imagenes/panoramica.jpg" alt="Panorámica del Parque Natural" class="header-image">
+        <h1 class="header">
+            <span class="highlight">Parque Natural</span>
+            <span class="highlight2"> Sierra Bicuerca</span>
+        </h1>
+        <div class="content">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio" class="nav-link current">Inicio</a></li>
+                    <li><a href="#especies" class="nav-link">Especies</a></li>
+                    <li><a href="#reservas" class="nav-link">Reservas</a></li>
+                    <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                </ul>
+            </nav>
+            <div class="main" id="main-content">
+                <div id="inicio" class="frame">
+                    <h2><span class="highlight3">Bienvenidos al parque natural</span></h2>
+                    <hr>
+                    <p>El Parque Natural de Sierra Bicuerna, reserva de la biosfera, es referencia obligada del bosque y matorral mediterráneo interior, y hábitat de la fauna y flora autóctona.</p>
+                    <p>Fue declarado parque natural en 1983, con una superficie de 9.090 Has. siendo uno de los enclaves más extensos de la Comunidad Valenciana. Con un gran espesor de vegetación, y varios riachuelos ofrecen un clima ideal para las especies terrestres y acuáticas. Sus bosques, de carrasca y pino, albergan una amplia colonia de aves.</p>
+                    <p>Entre las especies del parque podemos destacar una de las últimas colonias de buitre leonado de la zona. También nos veremos constantemente sobrevolados por el halcón peregrino o el águila perdicera. Al acercarnos a los riachuelos, veremos numerosas pisadas de jabalís y ciervos, y si no hacemos mucho ruido, no es difícil encontrar alguno abrevando bajo la atenta mirada del martín pescador, esperando a la despistada trucha.</p>
+                </div>
+                <div id="especies" class="hidden frame">
+                    <h2><span class="highlight3">Especies del parque</span></h2>
+                    <hr>
+                    <p>Estas son algunas de las especies del parque:</p>
+                    <h3>Nutria</h3>
+                    <p>La nutria europea o paleártica (Lutra lutra) es un mamífero carnívoro de hábitat acuático. Se alimenta de peces, ranas y pequeñas presas que caza en el río. Cerca de sus lugares de cobijo, podremos ver toboganes que crean para llegar rápidamente al agua.</p>
+                    <h3>Buitre leonado</h3>
+                    <p>El buitre leonado (Gyps fulvus) es un ave rapaz, una de las mayores que puede encontrarse en la Península Ibérica. Su alimentación principal es la carroña, que localiza con su aguda vista.</p>
+                    <h3>Gineta</h3>
+                    <p>La gineta (Genetta genetta) es una especie de mamífero carnívoro. Son grandes trepadoras, muy ágiles y grandes cazadoras de pequeños animales. Aunque también se alimentan de los frutos del bosque que se pueden encontrar en el parque.</p>
+                </div>
+                <div id="reservas" class="hidden frame">
+                    <h2><span class="highlight3">Reservas</span></h2>
+                    <hr>
+                    <p>Aquí puede encontrar información sobre cómo reservar su visita al parque.</p>
+                </div>
+                <div id="galeria" class="hidden frame">
+                    <h2><span class="highlight3">Galería</span></h2>
+                    <hr>
+                    <p>Visite nuestra galería para ver imágenes impresionantes del parque natural y su fauna.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.frame');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+
+                    // Remove current class from all links and add to the clicked one
+                    links.forEach(l => l.classList.remove('current'));
+                    link.classList.add('current');
+                });
+            });
+
+            // Show the "inicio" section by default
+            document.getElementById('inicio').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
