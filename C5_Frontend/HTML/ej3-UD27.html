@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la Tabla</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            font-weight: bold; /* Poner todas las letras en negrita */
+        }
+        th {
+            background-color: lightgreen;
+            text-align: center; /* Centrar el texto de las cabeceras */
+        }
+        .celda1 {
+            background-color: lightgreen;
+            text-align: center;
+        }
+        .celda2 {
+            background-color: #66feff;
+            text-align: left; /* Alinear a la izquierda */
+        }
+        .celda3, .celda5, .celda8 {
+            color: red;
+            text-align: center; /* Centrar el texto */
+        }
+        .celda4 {
+            text-align: center; /* Centrar el texto */
+        }
+        .celda6 {
+            background-color: #ff99ff;
+            text-align: left; /* Alinear a la izquierda */
+        }
+        .celda7, .celda8 {
+            text-align: center; /* Centrar el texto */
+        }
+    </style>
+</head>
+<body>
+    <h2>TÍTULO DE LA TABLA</h2>
+    <table>
+        <tr>
+            <td colspan="3" class="celda1">CELDA 1</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="celda2">CELDA 2</td>
+            <td class="celda3">CELDA 3</td>
+            <td rowspan="2" class="celda4">CELDA 4</td>
+        </tr>
+        <tr>
+            <td class="celda5">CELDA 5</td>
+        </tr>
+        <tr>
+            <td class="celda7">CELDA 7</td>
+            <td class="celda8">CELDA 8</td>
+            <td rowspan="2" class="celda6">CELDA 6</td>
+        </tr>
+    </table>
+</body>
+</html>
