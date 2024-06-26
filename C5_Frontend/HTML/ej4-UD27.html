@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Imagen de Fondo</title>
+    <style>
+        body {
+            background-image: url('3penguin.jpg');
+            background-size:contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 30%; /* Más pequeña */
+            margin-top: 20px;
+            border: 3px double black;
+        }
+        th, td {
+            border: 3px double black;
+            padding: 1px; /* Más alargada */
+            text-align: center;
+            background-color: #FFFF99;
+            font-weight: bold;
+        }
+        th {
+            background-color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">ENCABEZADO</th>
+        </tr>
+        <tr>
+            <td>CELDA1</td>
+            <td>CELDA2</td>
+        </tr>
+    </table>
+</body>
+</html>
