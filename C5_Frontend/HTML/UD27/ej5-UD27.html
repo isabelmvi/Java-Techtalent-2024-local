@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Ordenada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        ol ol {
+            list-style-type: lower-alpha;
+        }
+        ol ol[type="I"] {
+            list-style-type: upper-roman;
+        }
+    </style>
+</head>
+<body>
+    <p>Diarios de:</p>
+    <ol>
+        <li>ESPAÑA...
+            <ol>
+                <li>El Mundo</li>
+                <li>El País</li>
+                <li>La Vanguardia</li>
+            </ol>
+        </li>
+        <li>EE.UU.
+            <ol type="I">
+                <li>New York Times</li>
+                <li>The Washington Post</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>
