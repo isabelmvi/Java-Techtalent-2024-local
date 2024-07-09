@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Replica</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #141414;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .user-profile img {
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .featured {
+            position: relative;
+            height: 60vh;
+            background-color: #000;
+        }
+
+        .featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .featured-info {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        .featured-info h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .featured-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .featured-info button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: red;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .featured-info button:hover {
+            background-color: darkred;
+        }
+
+        .category {
+            margin: 40px 0;
+        }
+
+        .category h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .category-content {
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        .category-content img {
+            height: 200px;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+
+        .category-content img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="netflix-logo.png" alt="Netflix Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="#">Latest</a>
+            <a href="#">My List</a>
+        </nav>
+        <div class="user-profile">
+            <img src="user-avatar.png" alt="User Avatar">
+        </div>
+    </header>
+    <main>
+        <section class="featured">
+            <img src="featured-show.png" alt="Featured Show">
+            <div class="featured-info">
+                <h1>Featured Show Title</h1>
+                <p>Exciting description of the featured show.</p>
+                <button>Watch Now</button>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Popular on Netflix</h2>
+            <div class="category-content">
+                <img src="show1.png" alt="Show 1">
+                <img src="show2.png" alt="Show 2">
+                <img src="show3.png" alt="Show 3">
+                <img src="show4.png" alt="Show 4">
+                <img src="show5.png" alt="Show 5">
+            </div>
+        </section>
+        <section class="category">
+            <h2>Trending Now</h2>
+            <div class="category-content">
+                <img src="show6.png" alt="Show 6">
+                <img src="show7.png" alt="Show 7">
+                <img src="show8.png" alt="Show 8">
+                <img src="show9.png" alt="Show 9">
+                <img src="show10.png" alt="Show 10">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
