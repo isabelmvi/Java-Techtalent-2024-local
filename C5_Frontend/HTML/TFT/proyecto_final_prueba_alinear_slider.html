@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Layout with Sliding Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background-image') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            margin: 0; /* Suppress top margin */
+            padding: 5px 15px; /* Adjust padding */
+            background-color: #fff;
+            border-radius: 10px;
+            position: absolute; /* Superpose title on video */
+            top: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 1.5em; /* Make title text smaller */
+        }
+        .video-banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px; /* Space below video banner */
+        }
+        .video-banner iframe {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .nav-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 8px;
+            width: 86%;
+            z-index: 1;
+        }
+        .nav-container ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+        }
+        .nav-container ul li {
+            margin: 0 10px;
+        }
+        .nav-container ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+        .nav-container ul li a:hover {
+            background-color: #ddb81a;
+            border-radius: 4px;
+        }
+        .content {
+            display: none;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .content.active {
+            display: block;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin-top: 30px; /* Space between video banner and container */
+        }
+        .frame {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .slider-container {
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 30px 20px 0; /* Add top margin */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .slide-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navigation {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .social-icon {
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .social-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px; /* Adjust gap between icons as needed */
+        }
+
+        .info-icon {
+            display: inline-block;
+            padding: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-icon img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+        }
+
+        .info-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .info-box, .social-box {
+            background-color: rgba(219, 184, 26, 0.7); /* Translucent yellow box */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 20px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            align-items: flex-start; /* Align icons and slider at the top */
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TFT Services</h1>
+    <div class="video-banner">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="frame menu">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+            <button>Button 4</button>
+        </div>
+        <div class="slider-wrapper">
+            <div class="info-box">
+                <div class="info-container">
+                    <div class="info-icon Equipo"><img src="equipo-icon.png" alt="Equipo"></div>
+                    <div class="info-icon FAQ"><img src="faq-icon.png" alt="FAQ"></div>
+                    <div class="info-icon Ubicación"><img src="ubicacion-icon.png" alt="Ubicación"></div>
+                    <div class="info-icon Valores"><img src="valores-icon.png" alt="Valores"></div>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="image1.jpeg" alt="Image 1"></div>
+                        <div class="slide"><img src="image2.jpeg" alt="Image 2"></div>
+                        <div class="slide"><img src="image3.jpeg" alt="Image 3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-box">
+                <div class="social-icons">
+                    <div class="social-icon facebook"><img src="facebook-icon.png" alt="Facebook"></div>
+                    <div class="social-icon twitter"><img src="twitter-icon.png" alt="Twitter"></div>
+                    <div class="social-icon instagram"><img src="instagram-icon.png" alt="Instagram"></div>
+                    <div class="social-icon linkedin"><img src="linkedin-icon.png" alt="LinkedIn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const slider = document.querySelector('.slides');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

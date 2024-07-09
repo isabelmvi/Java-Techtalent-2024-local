@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    background-image: url('img-cielo.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.center-rectangle {
+    margin-top: 100px; /* Adjust this value to increase/decrease top margin */
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black; /* Optional border for visibility */
+}
+
+.center-rectangle img {
+    width: 50px; /* Adjust as needed */
+    height: auto;
+}
