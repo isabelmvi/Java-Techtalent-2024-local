@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Symbol Grid</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background {
+            background-image: url('img-cielo.jpeg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .center-rectangle {
+            margin-top: 100px; /* Adjust this value to increase/decrease top margin */
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid black; /* Optional border for visibility */
+            width: 80%; /* Adjust as needed */
+            max-width: 800px; /* Adjust as needed */
+        }
+
+        .center-rectangle img {
+            width: 50px; /* Adjust as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="center-rectangle">
+            <div class="empty-space"></div>
+            <img src="google-symbol.png" alt="Google Symbol">
+        </div>
+    </div>
+</body>
+</html>
