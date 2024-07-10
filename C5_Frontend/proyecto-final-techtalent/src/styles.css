@@ -27,7 +27,6 @@ body {
 }
 
 /* CSS for shrinking the navbar */
-/* CSS for shrinking the navbar */
 .navbar.shrink {
     width: 230px; /* Adjusts width to the content */
     padding: 10px 20px; /* Reduced padding for the shrunken state */
@@ -35,6 +34,7 @@ body {
     margin: 0; /* Align to the left margin of the page */
     display: flex; /* Ensures items are in a single line */
     align-items: left; /* Vertically centers the items */
+    top: 20px;
 }
 
 /* Ensure that the logo text 'TFT Services' remains visible */
@@ -48,7 +48,6 @@ body {
     display: none; /* Hide all other nav items except the logo */
 }
 
-
 .nav-links, .auth-buttons {
     transition: opacity 0.5s ease;
 }
@@ -58,6 +57,7 @@ body {
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0s 0.5s; /* Ensure visibility changes after opacity transition */
 }
+
 .logo a {
     font-size: 24px;
     font-weight: bold;
@@ -129,6 +129,7 @@ body {
 
 .video-banner {
     position: fixed; /* Makes the video banner stick to the top */
+    background-position: cover;
     top: 0;
     left: 0;
     width: 100%;
@@ -156,7 +157,6 @@ body {
     height: 100%;
     z-index: -1; /* Ensures the video is below the overlay */
 }
-
 
 .nav-container {
     position: absolute;
@@ -226,6 +226,8 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    pointer-events: stroke;
+    margin-top: 150%;
 }
 
 .info-icon, .social-icon {
@@ -292,8 +294,6 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
-
-
 .contact-section {
     width: 100%;
     background-color: #d30000b8;
@@ -325,7 +325,7 @@ body {
 
 .contact-form input, .contact-form textarea {
     width: 100%; /* Ensure the input fields take full width */
-    padding: 15px; /* Increase padding */
+    padding: 10px; /* Increase padding */
     border-radius: 5px;
     border: none;
 }
@@ -338,6 +338,18 @@ body {
     color: black;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.contact-form select {
+    -webkit-appearance: none; /* Elimina la flecha predeterminada en Chrome/Safari */
+    -moz-appearance: none; /* Elimina la flecha predeterminada en Firefox */
+    appearance: none; /* Elimina la flecha predeterminada en otros navegadores */
+    padding: 10px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    width: 100%; /* Hace que el ancho del select sea el 100% del contenedor */
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
 }
 
 .contact-form button:hover {
@@ -356,10 +368,12 @@ body {
     background-color: #333;
     color: white;
     width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
     text-align: center;
-    margin-top: 40px;
+    position: relative; /* Ensure it respects the width of its parent */
+    left: 0; /* Make sure it starts from the left edge */
+    margin-top: 2%;
 }
-
 
 .container {
     margin-top: 40px;
@@ -376,4 +390,47 @@ body {
 
 .contact-section {
     margin-top: 40px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-container, .social-icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 100px;
+    }
+
+    .slider-container {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        gap: 20px;
+    }
+
+    .navbar.shrink {
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        align-content: center;
+        border-radius: 20%;
+        padding-top: 30%;
+    }
 }
