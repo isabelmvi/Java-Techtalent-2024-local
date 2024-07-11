@@ -1,6 +1,152 @@
-.footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-  }
-  
+.navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dbb81a;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border-top: 2%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: calc(100% - 80px); /* Adjusts the width to account for added margin */
+  margin: 20px 40px; /* Adds more space around the nav bar */
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+/* CSS for shrinking the navbar */
+.navbar.shrink {
+  width: 230px; /* Adjusts width to the content */
+  padding: 10px 20px; /* Reduced padding for the shrunken state */
+  justify-content: flex-start; /* Aligns the navbar items to the left */
+  margin: 0; /* Align to the left margin of the page */
+  display: flex; /* Ensures items are in a single line */
+  align-items: center; /* Vertically centers the items */
+  top: 6%;
+  margin-left: 10%;
+}
+
+/* Ensure that the logo text 'TFT Services' remains visible */
+.navbar.shrink .logo {
+  display: inline-block; /* Ensure the logo is displayed inline */
+  white-space: nowrap; /* Prevents the logo text from wrapping */
+}
+
+/* Hide other navbar items when in shrink mode */
+.navbar.shrink .nav-item:not(.logo) {
+  display: none; /* Hide all other nav items except the logo */
+}
+
+.nav-links, .auth-buttons {
+  transition: opacity 0.5s ease;
+}
+
+.nav-links.hidden, .auth-buttons.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Ensure visibility changes after opacity transition */
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn {
+  background-color: #b59517;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-color: #ffffff;
+}
+
+.signup-btn {
+  background-color: #000;
+  color: #dbb81a;
+  border-color: #b59517;
+}
+
+.login-btn:hover, .signup-btn:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 10px;
+}
+
+.titulo {
+  background-color: #ddb81a;
+  top: 20px;
+  position: left;
+  padding: 10px 50px;
+  border-radius: 100px 100px 120px 120px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+.navbar {
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  gap: 20px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.navbar.shrink {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  align-content: center;
+  border-radius: 20%;
+  padding-top: 30%;
+  word-break: keep-all;
+}
+}
+ 
