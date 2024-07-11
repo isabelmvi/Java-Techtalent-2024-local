@@ -146,7 +146,7 @@
 
 .slides {
     display: flex;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
@@ -177,7 +177,8 @@
 
 .contact-section {
     width: 100%;
-    background-color: #d30000b8;
+    background-color: rgba(219, 184, 26, 0.3); /* Translucent color */
+    backdrop-filter: blur(10px);
     color: rgb(0, 0, 0);
     padding: 20px;
     box-sizing: border-box;
@@ -278,7 +279,7 @@
     .slider-container {
         max-width: 100%;
         margin-top: 50px;
-        margin-bottom: 20%;
+        margin-bottom: 40%;
     }
 
     .contact-content {

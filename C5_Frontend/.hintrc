@@ -19,6 +19,12 @@
           "width: fit-content"
         ]
       }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
     ]
   },
   "browserslist": [
